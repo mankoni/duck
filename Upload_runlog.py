@@ -37,7 +37,7 @@ def upload_daily_run_log(sftp):
     local_log_path = "C:\\Users\\shanki\\Downloads\\DuckDataset\\Daily_Logs"
     remote_log_path = 'Logs'
     log_files = (os.listdir(local_log_path))
-    log_file = max(log_files,key=lambda x:x.split('_',1)[1])
+    log_file = max(log_files,key=lambda x:x.split('_',1)[1])  # split file name by FIRST occurence of "_" and ignore remaining "_"
     remote_log_file_path = 'Logs/'+log_file
     local_log_file_path = os.path.join(local_log_path,log_file)
     print((log_file))
